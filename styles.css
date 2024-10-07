@@ -1,0 +1,795 @@
+/* General settings */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FA; /* Fondo en color pastel claro */
+    color: #333;
+    overflow-x: hidden;
+}
+
+.descripcion {
+    font-family: monospace;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #F8F9FA; /* Fondo blanco */
+
+    margin-bottom: 0; /* Asegúrate de que no haya margen debajo */
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #3A3A3A; /* Texto en gris oscuro */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFB5A7; /* Hover color pastel */
+}
+
+/* Main section */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px; /* Reducido el padding superior para menos espacio */
+    gap: 20px;
+    margin-top: 0; /* Evitar espacio adicional */
+}
+
+.left {
+    flex: 1;
+}
+
+.left h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-top: 0; /* Evitar espacio superior en el título */
+    margin-bottom: 20px; /* Añadir espacio debajo del título si es necesario */
+    color: #4A4A4A; /* Texto principal en gris oscuro */
+}
+
+.left h1 span {
+    color: #383838; /* Color pastel rosa */
+}
+
+.left p {
+    font-size: 1.2rem;
+    margin-top: 10px; /* Reducir espacio superior en la descripción */
+    color: #6C757D; /* Texto secundario en gris claro */
+}
+/* Imagen derecha */
+.right {
+    flex: 1; /* Hace que ocupe el espacio restante */
+    display: flex; /* Asegura que se puedan aplicar alineaciones */
+    justify-content: flex-end; /* Empuja la imagen hacia la derecha */
+}
+
+.right img {
+    margin-left: auto; /* Empuja la imagen hacia la derecha automáticamente */
+    max-width: 1200px;
+    height: auto;
+}
+
+
+
+/* Call to Action buttons */
+.cta {
+    margin-top: 30px;
+}
+
+.cta button {
+    padding: 15px 30px;
+    margin-right: 20px;
+    background-color: #BDE0FE; /* Azul pastel */
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta button:hover {
+    background-color: #FFC6FF; /* Hover en rosado pastel */
+}
+
+.cta button:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+/* Social Icons */
+.social-buttons {
+    display: flex; /* Para alinear los botones horizontalmente */
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 30px; /* Espacio arriba de los botones */
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333; /* Color del texto */
+    padding: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para el hover */
+}
+
+.social-button:hover {
+    background-color: transparent; /* Evita que aparezca un fondo rosa */
+    transform: scale(1.2); /* Aumenta el tamaño del botón al hacer hover */
+}
+
+.social-icon {
+    width: 1cm; /* Tamaño inicial del icono */
+    height: auto;
+    transition: transform 0.3s ease; /* Transición en los iconos */
+}
+
+.social-button:hover .social-icon {
+    transform: scale(1.3); /* Aumenta el tamaño del icono */
+}
+
+/* Contenedor general de las cards */
+.info-cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los cards bajen si no hay espacio suficiente */
+    justify-content: space-between; /* Espacio uniforme entre los cards */
+    gap: 20px; /* Espacio entre los cards */
+    padding: 20px;
+}
+
+/* Estilos generales de los cards */
+.card {
+    background-color: #b3e1ff; /* Fondo rosado suave */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Cada card ocupa 1/3 del ancho disponible, con margen */
+    box-sizing: border-box; /* Asegura que padding y borde estén incluidos en el ancho total */
+    transition: transform 0.3s ease;
+}
+
+/* Nueva clase para la barra azul con los mismos estilos que la rosa */
+.info-cards-blue {
+    background-color: #cfe2f3; /* Color azul pastel */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados igual que la sección rosa */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave igual que la sección rosa */
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+/* Estilo específico para el segundo card */
+/* Estilos del Card 2 */
+.card2 {
+    background-color: #cfe2f3; /* Color de fondo similar al Card 1 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que el card ocupe el 100% del ancho disponible */
+    max-width: 1200px; /* Limitar el ancho máximo del card */
+    margin: 20px auto; /* Espaciado entre cards y centrar horizontalmente */
+}
+
+/* Estilos para la galería de miniaturas */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centra las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
+}
+
+.thumbnail {
+    width: 150px; /* Tamaño de las miniaturas */
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Efecto zoom al pasar el cursor */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 100; /* Asegura que esté sobre todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro translúcido */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; /* Limita el tamaño máximo de la imagen */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Texto debajo de la imagen (opcional) */
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Ajustes de responsividad */
+@media (max-width: 900px) {
+    .card, .card2 {
+        width: calc(50% - 20px); /* En pantallas medianas, cada card ocupa la mitad del ancho */
+    }
+}
+
+@media (max-width: 600px) {
+    .card, .card2 {
+        width: 100%; /* En pantallas pequeñas, cada card ocupa todo el ancho */
+    }
+}
+
+
+/* Estilos específicos para el card de perfil */
+.profile-card {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la imagen y la descripción */
+    background-color: #ffe5e2; /* Fondo suave */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Extiende el card para que ocupe todo el ancho */
+    max-width: 100%; /* Evita que el card se reduzca */
+    margin: 20px 0; /* Espacio arriba y abajo */
+    gap: 20px; /* Espacio entre la imagen y la descripción */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+}
+
+/* Estilo para la imagen circular */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border: 3px solid #FFB5A7; /* Añade un borde alrededor de la imagen */
+}
+
+/* Descripción del perfil */
+.profile-description {
+    flex: 1; /* Hace que la descripción ocupe el espacio restante */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.profile-description h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.profile-description p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+
+.card h2 {
+    margin: 0 0 10px;
+    color: #4A4A4A; /* Color del texto */
+}
+
+.card p {
+    color: #FFFFFF; /* Texto en blanco */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de ampliación al pasar el ratón */
+}
+
+/* Fade-in effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Circle styles */
+.circle {
+    display: inline-block;
+    width: 20px; /* Ajusta el tamaño según lo necesites */
+    height: 20px; /* Ajusta el tamaño según lo necesites */
+    border-radius: 50%; /* Hace que el elemento sea circular */
+    background-color: #ff88d7; /* Cambia el color a tu elección (ejemplo: rojo tomate) */
+    margin-right: 8px; /* Espacio entre el círculo y el texto */
+}
+
+/* Logo circle */
+.logo-circle {
+    width: 60px; /* Tamaño del círculo */
+    height: 60px; /* Tamaño del círculo */
+    background-color: #333; /* Color gris oscuro */
+    border-radius: 50%; /* Hace que el contenedor sea circular */
+    display: flex; /* Flexbox para centrar el logo */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin-right: 10px; /* Espacio entre el círculo y el texto */
+}
+
+.logo-img {
+    width: 150%; /* Ajusta el tamaño del logo dentro del círculo */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+/* Hover text styles */
+.hover-text {
+    color: #000;
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Cambiar el color de cada palabra al hacer hover */
+#software:hover {
+    color: #ff6ba6; /* Rojo pastel */
+}
+
+#web:hover {
+    color: #4ECDC4; /* Verde pastel */
+}
+
+#diseno:hover {
+    color: #FFD93D; /* Amarillo pastel */
+}
+
+#ilustracion:hover {
+    color: #81d48e; /* Púrpura pastel */
+}
+
+/* Estilos del contenedor del menú desplegable */
+.gmail-container {
+    position: relative; /* Permite que el menú desplegable se posicione relativo a este contenedor */
+    display: inline-block; /* Mantiene los elementos en línea */
+}
+
+/* Estilos del menú desplegable */
+.dropdown {
+    display: none; /* Escondido por defecto */
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    top: 100%; /* Posiciona el menú justo debajo del ícono */
+    left: 0; /* Alinear a la izquierda del ícono de Gmail */
+    margin-top: 10px; /* Espaciado para que no esté pegado al ícono */
+    font-size: 1rem;
+}
+
+/* Mostrar el menú solo al hacer hover en el contenedor */
+.gmail-container:hover .dropdown {
+    display: block; /* Muestra el menú desplegable al hacer hover en el contenedor */
+}
+
+/* Estilos del texto del correo */
+#emailText {
+    margin: 0;
+    color: #333;
+    font-family: monospace;
+}
+
+/* Botón de copiar */
+.copy-button {
+    background-color: #BDE0FE;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: #333;
+    font-family: monospace;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+    background-color: #FFC6FF; /* Hover en rosa pastel */
+}
+
+.copy-message {
+    background-color: #BDE0FE; /* Color de fondo azul pastel */
+    color: #333; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espaciado superior */
+    position: absolute; /* Posiciona el mensaje relativo al contenedor */
+    top: 60px; /* Ajusta la posición vertical */
+    left: 0; /* Alinea a la izquierda */
+    transition: opacity 0.5s ease; /* Transición suave para la aparición/desaparición */
+    opacity: 0; /* Comienza oculto */
+}
+
+/* Estilos para el fondo difuminado */
+.overlay {
+    position: fixed; /* Fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    display: none; /* Ocultar por defecto */
+    z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+}
+/* Estilos para el popup del currículum */
+.curriculum-container {
+    position: relative; /* Necesario para que el dropdown se posicione correctamente */
+}
+
+#curriculumDropdown {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 50px; /* Ajusta la distancia desde el icono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 100; /* Asegura que esté encima de otros elementos */
+    white-space: nowrap;
+}
+
+.curriculum-container:hover #curriculumDropdown {
+    display: block; /* Muestra el dropdown cuando pasas sobre el contenedor */
+}
+
+#curriculumDropdown p {
+    margin: 0;
+    font-family: monospace;
+    color: #333;
+}
+
+/* Estilos para la previsualización del currículum */
+.curriculum-preview {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centrado */
+    z-index: 1000; /* Asegúrate de que esté por encima del overlay */
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px; /* Espacio interno */
+}
+
+/* Cambiar el ancho de la imagen */
+.curriculum-preview img {
+    width: 12cm; /* Ancho ajustado de 12 cm */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Botón de cerrar */
+#closeButton {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #FF6B6B; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#closeButton:hover {
+    background-color: #FF4B4B; /* Color más oscuro al hacer hover */
+}
+
+/* Estilos para la galería de miniaturas */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centra las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
+}
+
+.thumbnail {
+    width: 100px; /* Tamaño de las miniaturas */
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Efecto zoom al pasar el cursor */
+}
+
+/* Estilos del Card 2 */
+.card2 {
+    background-color: #cfe2f3; /* Color de fondo más claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que el card ocupe el 100% del ancho disponible */
+    max-width: 1200px; /* Limitar el ancho máximo del card */
+    margin: 0 auto; /* Centrar el card horizontalmente */
+}
+
+/* Estilos para la galería de miniaturas */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centra las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
+}
+
+.thumbnail {
+    width: 150px; /* Aumentar el tamaño de las miniaturas */
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Efecto zoom al pasar el cursor */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 100; /* Asegura que esté sobre todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro translúcido */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; /* Limita el tamaño máximo de la imagen */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Texto debajo de la imagen (opcional) */
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+    font-size: 18px;
+}
+/* Estilos del nuevo modal */
+.custom-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que esté sobre todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro translúcido */
+}
+
+.custom-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; /* Limita el tamaño máximo de la imagen */
+    animation: fadeInCustom 0.5s; /* Añade una animación de aparición suave */
+}
+
+.custom-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.custom-close:hover,
+.custom-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Texto debajo de la imagen (opcional) */
+#customCaption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Animación para el modal */
+@keyframes fadeInCustom {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Estilos para la previsualización de las imágenes */
+.image-preview {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centrado */
+    z-index: 1000; /* Asegúrate de que esté por encima del overlay */
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px; /* Espacio interno */
+}
+
+.image-preview img {
+    width: 12cm; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción */
+}
+
+#closeImageButton {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #FF6B6B; /* Color del botón de cerrar */
+    color: white; /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#closeImageButton:hover {
+    background-color: #FF4B4B; /* Color más oscuro al hacer hover */
+}
+/* Galería de imágenes */
+.galeria {
+    position: relative; /* Necesario para colocar el velo encima */
+    display: flex;
+    width: 100%;
+    height: 430px;
+}
+
+.galeria img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.galeria img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* Superposición inicial (velo difuminado) */
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Capa blanca semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Asegura que el overlay esté por encima de las imágenes */
+    backdrop-filter: blur(10px); /* Efecto de difuminado */
+    transition: opacity 0.5s ease; /* Transición suave para ocultar el overlay */
+}
+
+/* Texto de la superposición */
+.galeria-overlay h1 {
+    font-size: 4rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Desaparición del velo al pasar el cursor sobre la galería */
+.galeria:hover .galeria-overlay {
+    opacity: 0; /* El velo se desvanece */
+    pointer-events: none; /* Permite interactuar con las imágenes debajo */
+}
+
+/* Estilos para la descripción de perfil */
+.profile-description p {
+    color: #383838;
+    font-family: monospace;
+}
+
+.profile-description h2 {
+    font-family: monospace;
+}
+
+/* Estilos para las habilidades */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 30%; /* Reducir el ancho máximo de la sección de habilidades */
+    justify-content: center;
+}
+
+.skills img {
+    width: 70px;
+    margin: 5px;
+}
